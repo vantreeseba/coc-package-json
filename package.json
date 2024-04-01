@@ -32,6 +32,7 @@
   "author": "vantreeseba@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "colors": "^1.4.0",
     "coc.nvim": "^0.0.82",
     "esbuild": "0.20.2",
     "typescript": "^4.9.4",

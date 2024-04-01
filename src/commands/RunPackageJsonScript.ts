@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { workspace, window, Command } from 'coc.nvim';
+import { workspace, window, Command, QuickPickItem } from 'coc.nvim';
 import path from 'path';
 
 export class RunPackageJsonScript implements Command {
@@ -15,14 +15,19 @@ export class RunPackageJsonScript implements Command {
     let content = fs.readFileSync(jsonPath, { encoding: 'UTF8' });
     let json = JSON.parse(content);
 
-    let scripts = Object.keys(json.scripts);
+    let scripts: Array<QuickPickItem> = Object.entries(json.scripts).map(([key, value]) => {
+      return {
+        label: key,
+        description: `${value}`,
+      };
+    });
 
     const picked = await window.showQuickPick(scripts, {
       title: 'Select script to run:',
       matchOnDescription: true,
     });
 
-    const script = picked;
+    const script = picked?.label;
 
     window.openTerminal('npm run ' + script, {
       keepfocus: false,
