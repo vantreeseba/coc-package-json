@@ -1,6 +1,6 @@
 {
   "name": "coc-package-json",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Package json commands / etc extension for coc.nvim",
   "main": "lib/index.js",
   "publisher": "vantreeseba",
