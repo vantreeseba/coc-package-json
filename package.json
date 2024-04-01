@@ -1,0 +1,40 @@
+{
+  "name": "coc-package-json",
+  "version": "0.1.0",
+  "description": "Package json commands / etc extension for coc.nvim",
+  "main": "lib/index.js",
+  "publisher": "vantreeseba",
+  "repository": "vantreeseba/coc-package-json",
+  "engines": {
+    "coc": "^0.0.58"
+  },
+  "keywords": [
+    "coc.nvim",
+    "haxe"
+  ],
+  "scripts": {
+    "prepare": "node esbuild.js"
+  },
+  "activationEvents": [],
+  "contributes": {
+    "rootPatterns": [
+      {
+        "patterns": [
+          "package.json"
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "PackageJson",
+      "properties": {}
+    }
+  },
+  "author": "vantreeseba@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "coc.nvim": "^0.0.82",
+    "esbuild": "0.20.2",
+    "typescript": "^4.9.4",
+    "vscode-languageserver-protocol": "^3.17.5"
+  }
+}
